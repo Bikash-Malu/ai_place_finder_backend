@@ -68,7 +68,9 @@ const sendOtpEmail = (email, otp) => {
 // Endpoint to send OTP
 app.post('/send-otp', (req, res) => {
   const { email } = req.body;
-  const otp = otpGenerator.generate(6, { digits: true, upperCase: false, specialChars: false });
+  // Generate a 4-digit OTP
+const otp = otpGenerator.generate(4, { digits: true, upperCase: false, specialChars: false });
+
 
   const currentTime = Date.now();
   otpStorage[email] = { otp, timestamp: currentTime };
