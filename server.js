@@ -3,6 +3,9 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const otpGenerator = require('otp-generator');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 const port = 5000;
@@ -23,8 +26,8 @@ const transporter = nodemailer.createTransport({
   secure: false,
   requireTLS: true,
   auth: {
-    user: 'bikashmalu1@gmail.com',
-    pass: 'rcuu ezaj yols bmci' // Make sure to use environment variables for sensitive data
+    user: process.env.EMAIL_USER, // Use environment variable
+    pass: process.env.EMAIL_PASS  // Use environment variable
   }
 });
 
@@ -42,7 +45,7 @@ const sendOtpEmail = (email, otp) => {
   `;
 
   transporter.sendMail({
-    from: 'bikashmalu1@gmail.com',
+    from: process.env.EMAIL_USER, // Use environment variable
     to: email,
     subject: 'Your OTP Code',
     html: htmlContent // Use HTML content
@@ -52,11 +55,6 @@ const sendOtpEmail = (email, otp) => {
     }
   });
 };
-
-// Endpoint to test the server
-app.get('/hello', (req, res) => {
-  res.send('Hello World');
-});
 
 // Endpoint to send OTP
 app.post('/send-otp', (req, res) => {
@@ -95,6 +93,9 @@ app.post('/verify-otp', (req, res) => {
   } else {
     res.status(400).json({ error: 'Invalid OTP' });
   }
+});
+app.get('/hello', (req, res) => {
+  res.send('Hello World');
 });
 
 app.listen(port, () => {
