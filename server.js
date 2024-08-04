@@ -53,6 +53,11 @@ const sendOtpEmail = (email, otp) => {
   });
 };
 
+// Endpoint to test the server
+app.get('/hello', (req, res) => {
+  res.send('Hello World');
+});
+
 // Endpoint to send OTP
 app.post('/send-otp', (req, res) => {
   const { email } = req.body;
