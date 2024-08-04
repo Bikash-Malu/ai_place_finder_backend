@@ -44,7 +44,7 @@ const sendOtpEmail = (email, otp) => {
         <h2>Contact Us</h2>
         <p>If you have any questions or need assistance, please reach out to us at:</p>
         <ul>
-          <li><strong>Email:</strong> support@bikashmalu1@gmail.com</li>
+          <li><strong>Email:</strong> bikashmalu1@gmail.com</li>
           <li><strong>Phone:</strong>+91-9583856595</li>
           <li><strong>Address:</strong> Bhubaneswar,Odisha</li>
         </ul>
@@ -78,7 +78,7 @@ app.post('/send-otp', (req, res) => {
   res.json({ 
     message: 'OTP sent successfully from ai_place_finder', 
     contact: {
-      email: 'support@bikashmalu1@gmail.com',
+      email: 'bikashmalu1@gmail.com',
       phone: '+91-9583856595',
       address: 'Bhubaneswar,Odisha',
       website: 'https://tarvel-suggestion-ai.vercel.app/'
@@ -95,7 +95,7 @@ app.post('/verify-otp', (req, res) => {
     return res.status(400).json({ 
       error: 'OTP not sent or expired from ai_place_finder',
       contact: {
-        email: 'support@bikashmalu1@gmail.com',
+        email: 'bikashmalu1@gmail.com',
         phone: '+91-9583856595',
         address: 'Bhubaneswar,Odisha',
         website: 'https://tarvel-suggestion-ai.vercel.app/'
@@ -112,7 +112,7 @@ app.post('/verify-otp', (req, res) => {
     return res.status(400).json({ 
       error: 'OTP expired from ai_place_finder',
       contact: {
-        email: 'support@bikashmalu1@gmail.com',
+        email: 'bikashmalu1@gmail.com',
         phone: '+91-9583856595',
         address: 'Bhubaneswar,Odisha',
         website: 'https://tarvel-suggestion-ai.vercel.app/'
@@ -125,7 +125,7 @@ app.post('/verify-otp', (req, res) => {
     res.json({ 
       message: 'OTP verified successfully from ai_place_finder',
       contact: {
-        email: 'support@bikashmalu1@gmail.com',
+        email: 'bikashmalu1@gmail.com',
         phone: '+91-9583856595',
         address: 'Bhubaneswar,Odisha',
         website: 'https://www.ai_place_finder.com'
@@ -135,7 +135,7 @@ app.post('/verify-otp', (req, res) => {
     res.status(400).json({ 
       error: 'Invalid OTP from ai_place_finder',
       contact: {
-        email: 'support@bikashmalu1@gmail.com',
+        email: 'bikashmalu1@gmail.com',
         phone: '+91-9583856595',
         address: 'Bhubaneswar,Odisha',
         website: 'https://www.ai_place_finder.com'
