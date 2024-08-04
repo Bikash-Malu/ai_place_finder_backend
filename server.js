@@ -24,7 +24,7 @@ const transporter = nodemailer.createTransport({
   requireTLS: true,
   auth: {
     user: 'bikashmalu1@gmail.com',
-    pass: 'fkgdymbfaqklrcln' // Make sure to use environment variables for sensitive data
+    pass: 'rcuu ezaj yols bmci' // Make sure to use environment variables for sensitive data
   }
 });
 
